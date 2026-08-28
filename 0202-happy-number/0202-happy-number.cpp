@@ -14,14 +14,21 @@ int getnext(int x)
 }
     bool isHappy(int n) {
 
-        int s=n;
-        int f=getnext(n);
-        while(f!=1 && s!=f)
+        //int s=n;
+        //int f=getnext(n);
+        // while(f!=1 && s!=f)
+        // {
+        //     s=getnext(s);
+        //     f=getnext(getnext(f));
+        // }
+        // return f==1;
+        unordered_set<int> s;
+        while(n!=1 && s.find(n)==s.end())
         {
-            s=getnext(s);
-            f=getnext(getnext(f));
-        }
-        return f==1;
+            s.insert(n);
+            n=getnext(n);
+        } 
+        return n==1;
         
     }
 };
