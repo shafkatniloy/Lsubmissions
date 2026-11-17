@@ -19,7 +19,7 @@ public:
 class Solution {
 public:
     Node* connect(Node* root) {
-        if(root==NULL || root->left== NULL){
+        if(root==NULL ){
             return root;
         }
         
